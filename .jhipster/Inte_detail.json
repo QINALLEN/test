@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "Integral",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "companyId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "companyUUId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenderCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "proName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rewardValue",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rewardDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20200227102424",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "inte_detail",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "Integral"
+}

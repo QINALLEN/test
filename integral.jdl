@@ -1,0 +1,34 @@
+entity Inte_companys {
+  companyId Integer,
+  companyUUID String,
+  companyName String,
+  type Integer,
+  integralValue Integer,
+  ranking Integer,
+  createTime LocalDate
+}
+entity Inte_detail {
+  companyId Integer,
+  companyUUId String,
+  companyName String,
+  type Integer,
+  source String,
+  tenderCode String,
+  proName String,
+  rewardValue Integer,
+  rewardDate LocalDate
+}
+entity Inte_log {
+  action String,
+  company Integer,
+  createTime LocalDate,
+  request String,
+  is_success Integer,
+  remark String
+}
+dto * with mapstruct
+paginate Inte_companys, Inte_detail with pagination
+service Inte_companys, Inte_detail with serviceImpl
+service Inte_log with serviceClass
+microservice Inte_companys, Inte_detail, Inte_log with Integral
+clientRootFolder Inte_companys, Inte_detail, Inte_log with Integral

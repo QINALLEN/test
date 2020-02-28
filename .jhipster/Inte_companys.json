@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "Integral",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "companyId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "companyUUID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "integralValue",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ranking",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20200227093925",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "inte_companys",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "Integral"
+}

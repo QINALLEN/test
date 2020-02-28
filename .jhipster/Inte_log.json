@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "Integral",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "action",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "request",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "is_success",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "remark",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200227103133",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "inte_log",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "Integral"
+}

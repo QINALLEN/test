@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.integral.my"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "microservice",
+    "baseName": "Integral",
+    "packageName": "com.integral.my",
+    "packageFolder": "com/integral/my",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjdhNzNkZmQxZGI0MmEzNjU2MDEzZjUzNzI0ZWI3ODI5ZDMwNWI5ZDBiMDhiM2M1NWRhOTNiYmUwM2UxYmUxMTU5ZDVjZmMwMGQ3ZjE0ZjUyMTUxYjBmOTRmMzg3MTA5Y2U1ZGY4YTI1YzJlNWE2YTc1OGI0MzJjZTkzNTM5ZjQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1582792416794,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
