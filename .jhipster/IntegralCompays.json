@@ -8,7 +8,11 @@
             "fieldType": "Integer"
         },
         {
-            "fieldName": "companyUUId",
+            "fieldName": "type",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "companyUuid",
             "fieldType": "String"
         },
         {
@@ -16,35 +20,27 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "type",
+            "fieldName": "integtalValue",
             "fieldType": "Integer"
         },
         {
-            "fieldName": "source",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "tenderCode",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "proName",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "rewardValue",
+            "fieldName": "ranking",
             "fieldType": "Integer"
         },
         {
-            "fieldName": "rewardDate",
+            "fieldName": "createTime",
             "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "sort",
+            "fieldType": "Instant"
         }
     ],
-    "changelogDate": "20200227102424",
-    "dto": "no",
+    "changelogDate": "20200228033459",
+    "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",
-    "entityTableName": "inte_detail",
+    "entityTableName": "integral_compays",
     "databaseType": "sql",
     "readOnly": false,
     "jpaMetamodelFiltering": false,

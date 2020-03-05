@@ -8,8 +8,8 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "company",
-            "fieldType": "Integer"
+            "fieldName": "companyUuid",
+            "fieldType": "String"
         },
         {
             "fieldName": "createTime",
@@ -20,7 +20,7 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "is_success",
+            "fieldName": "isSuccess",
             "fieldType": "Integer"
         },
         {
@@ -28,11 +28,11 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20200227103133",
-    "dto": "no",
+    "changelogDate": "20200228034231",
+    "dto": "mapstruct",
     "searchEngine": false,
-    "service": "serviceClass",
-    "entityTableName": "inte_log",
+    "service": "serviceImpl",
+    "entityTableName": "integral_logs",
     "databaseType": "sql",
     "readOnly": false,
     "jpaMetamodelFiltering": false,

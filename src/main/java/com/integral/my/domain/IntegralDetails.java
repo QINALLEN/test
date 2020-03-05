@@ -1,18 +1,23 @@
 package com.integral.my.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Date;
 
 /**
- * A Inte_detail.
+ * A IntegralDetails.
  */
 @Entity
-@Table(name = "inte_detail")
-public class Inte_detail implements Serializable {
+@Table(name = "integral_details")
+public class IntegralDetails implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,8 +28,8 @@ public class Inte_detail implements Serializable {
     @Column(name = "company_id")
     private Integer companyId;
 
-    @Column(name = "company_uu_id")
-    private String companyUUId;
+    @Column(name = "company_uuid")
+    private String companyUuid;
 
     @Column(name = "company_name")
     private String companyName;
@@ -45,18 +50,13 @@ public class Inte_detail implements Serializable {
     private Integer rewardValue;
 
     @Column(name = "reward_date")
-    private LocalDate rewardDate;
+    private Date rewardDate;
 
-    @Column(name = "create_time")
-    private Date createTime;
+    @Column(name = "sort")
+    private Date sort;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    @Column(name = "have_inte")
+    private Integer haveInte;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -71,7 +71,7 @@ public class Inte_detail implements Serializable {
         return companyId;
     }
 
-    public Inte_detail companyId(Integer companyId) {
+    public IntegralDetails companyId(Integer companyId) {
         this.companyId = companyId;
         return this;
     }
@@ -80,24 +80,24 @@ public class Inte_detail implements Serializable {
         this.companyId = companyId;
     }
 
-    public String getCompanyUUId() {
-        return companyUUId;
+    public String getCompanyUuid() {
+        return companyUuid;
     }
 
-    public Inte_detail companyUUId(String companyUUId) {
-        this.companyUUId = companyUUId;
+    public IntegralDetails companyUuid(String companyUuid) {
+        this.companyUuid = companyUuid;
         return this;
     }
 
-    public void setCompanyUUId(String companyUUId) {
-        this.companyUUId = companyUUId;
+    public void setCompanyUuid(String companyUuid) {
+        this.companyUuid = companyUuid;
     }
 
     public String getCompanyName() {
         return companyName;
     }
 
-    public Inte_detail companyName(String companyName) {
+    public IntegralDetails companyName(String companyName) {
         this.companyName = companyName;
         return this;
     }
@@ -110,9 +110,17 @@ public class Inte_detail implements Serializable {
         return type;
     }
 
-    public Inte_detail type(Integer type) {
+    public IntegralDetails type(Integer type) {
         this.type = type;
         return this;
+    }
+
+    public Integer getHaveInte() {
+        return haveInte;
+    }
+
+    public void setHaveInte(Integer haveInte) {
+        this.haveInte = haveInte;
     }
 
     public void setType(Integer type) {
@@ -123,7 +131,7 @@ public class Inte_detail implements Serializable {
         return source;
     }
 
-    public Inte_detail source(String source) {
+    public IntegralDetails source(String source) {
         this.source = source;
         return this;
     }
@@ -136,7 +144,7 @@ public class Inte_detail implements Serializable {
         return tenderCode;
     }
 
-    public Inte_detail tenderCode(String tenderCode) {
+    public IntegralDetails tenderCode(String tenderCode) {
         this.tenderCode = tenderCode;
         return this;
     }
@@ -149,7 +157,7 @@ public class Inte_detail implements Serializable {
         return proName;
     }
 
-    public Inte_detail proName(String proName) {
+    public IntegralDetails proName(String proName) {
         this.proName = proName;
         return this;
     }
@@ -162,7 +170,7 @@ public class Inte_detail implements Serializable {
         return rewardValue;
     }
 
-    public Inte_detail rewardValue(Integer rewardValue) {
+    public IntegralDetails rewardValue(Integer rewardValue) {
         this.rewardValue = rewardValue;
         return this;
     }
@@ -171,17 +179,30 @@ public class Inte_detail implements Serializable {
         this.rewardValue = rewardValue;
     }
 
-    public LocalDate getRewardDate() {
+    public Date getRewardDate() {
         return rewardDate;
     }
 
-    public Inte_detail rewardDate(LocalDate rewardDate) {
+    public IntegralDetails rewardDate(Date rewardDate) {
         this.rewardDate = rewardDate;
         return this;
     }
 
-    public void setRewardDate(LocalDate rewardDate) {
+    public void setRewardDate(Date rewardDate) {
         this.rewardDate = rewardDate;
+    }
+
+    public Date getSort() {
+        return sort;
+    }
+
+    public IntegralDetails sort(Date sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    public void setSort(Date sort) {
+        this.sort = sort;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -190,10 +211,10 @@ public class Inte_detail implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Inte_detail)) {
+        if (!(o instanceof IntegralDetails)) {
             return false;
         }
-        return id != null && id.equals(((Inte_detail) o).id);
+        return id != null && id.equals(((IntegralDetails) o).id);
     }
 
     @Override
@@ -203,17 +224,19 @@ public class Inte_detail implements Serializable {
 
     @Override
     public String toString() {
-        return "Inte_detail{" +
-            "id=" + getId() +
-            ", companyId=" + getCompanyId() +
-            ", companyUUId='" + getCompanyUUId() + "'" +
-            ", companyName='" + getCompanyName() + "'" +
-            ", type=" + getType() +
-            ", source='" + getSource() + "'" +
-            ", tenderCode='" + getTenderCode() + "'" +
-            ", proName='" + getProName() + "'" +
-            ", rewardValue=" + getRewardValue() +
-            ", rewardDate='" + getRewardDate() + "'" +
-            "}";
+        return "IntegralDetails{" +
+            "id=" + id +
+            ", companyId=" + companyId +
+            ", companyUuid='" + companyUuid + '\'' +
+            ", companyName='" + companyName + '\'' +
+            ", type=" + type +
+            ", source='" + source + '\'' +
+            ", tenderCode='" + tenderCode + '\'' +
+            ", proName='" + proName + '\'' +
+            ", rewardValue=" + rewardValue +
+            ", rewardDate=" + rewardDate +
+            ", sort=" + sort +
+            ", haveInte=" + haveInte +
+            '}';
     }
 }

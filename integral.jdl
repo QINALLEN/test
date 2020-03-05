@@ -1,4 +1,4 @@
-entity Inte_companys {
+entity Integralcompanys {
   companyId Integer,
   companyUUID String,
   companyName String,
@@ -7,7 +7,7 @@ entity Inte_companys {
   ranking Integer,
   createTime LocalDate
 }
-entity Inte_detail {
+entity Integraldetails {
   companyId Integer,
   companyUUId String,
   companyName String,
@@ -18,7 +18,7 @@ entity Inte_detail {
   rewardValue Integer,
   rewardDate LocalDate
 }
-entity Inte_log {
+entity Integrallogs {
   action String,
   company Integer,
   createTime LocalDate,
@@ -27,8 +27,7 @@ entity Inte_log {
   remark String
 }
 dto * with mapstruct
-paginate Inte_companys, Inte_detail with pagination
-service Inte_companys, Inte_detail with serviceImpl
-service Inte_log with serviceClass
-microservice Inte_companys, Inte_detail, Inte_log with Integral
-clientRootFolder Inte_companys, Inte_detail, Inte_log with Integral
+paginate Integralcompanys, Integraldetails, Integrallogs with pagination
+service Integralcompanys, Integraldetails, Integrallogs with serviceImpl
+microservice Integralcompanys, Integraldetail, Integrallog with Integral
+clientRootFolder Integralcompanys, Integraldetail, Integrallog with Integral

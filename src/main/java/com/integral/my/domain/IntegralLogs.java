@@ -1,17 +1,22 @@
 package com.integral.my.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
- * A Inte_log.
+ * A IntegralLogs.
  */
 @Entity
-@Table(name = "inte_log")
-public class Inte_log implements Serializable {
+@Table(name = "integral_logs")
+public class IntegralLogs implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,17 +27,17 @@ public class Inte_log implements Serializable {
     @Column(name = "action")
     private String action;
 
-    @Column(name = "company")
-    private Integer company;
+    @Column(name = "company_uuid")
+    private String companyUuid;
 
     @Column(name = "create_time")
-    private LocalDate createTime;
+    private Date createTime;
 
     @Column(name = "request")
     private String request;
 
     @Column(name = "is_success")
-    private Integer is_success;
+    private Integer isSuccess;
 
     @Column(name = "remark")
     private String remark;
@@ -50,7 +55,7 @@ public class Inte_log implements Serializable {
         return action;
     }
 
-    public Inte_log action(String action) {
+    public IntegralLogs action(String action) {
         this.action = action;
         return this;
     }
@@ -59,29 +64,29 @@ public class Inte_log implements Serializable {
         this.action = action;
     }
 
-    public Integer getCompany() {
-        return company;
+    public String getCompanyUuid() {
+        return companyUuid;
     }
 
-    public Inte_log company(Integer company) {
-        this.company = company;
+    public IntegralLogs companyUuid(String companyUuid) {
+        this.companyUuid = companyUuid;
         return this;
     }
 
-    public void setCompany(Integer company) {
-        this.company = company;
+    public void setCompanyUuid(String companyUuid) {
+        this.companyUuid = companyUuid;
     }
 
-    public LocalDate getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public Inte_log createTime(LocalDate createTime) {
+    public IntegralLogs createTime(Date createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    public void setCreateTime(LocalDate createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -89,7 +94,7 @@ public class Inte_log implements Serializable {
         return request;
     }
 
-    public Inte_log request(String request) {
+    public IntegralLogs request(String request) {
         this.request = request;
         return this;
     }
@@ -98,24 +103,24 @@ public class Inte_log implements Serializable {
         this.request = request;
     }
 
-    public Integer getIs_success() {
-        return is_success;
+    public Integer getIsSuccess() {
+        return isSuccess;
     }
 
-    public Inte_log is_success(Integer is_success) {
-        this.is_success = is_success;
+    public IntegralLogs isSuccess(Integer isSuccess) {
+        this.isSuccess = isSuccess;
         return this;
     }
 
-    public void setIs_success(Integer is_success) {
-        this.is_success = is_success;
+    public void setIsSuccess(Integer isSuccess) {
+        this.isSuccess = isSuccess;
     }
 
     public String getRemark() {
         return remark;
     }
 
-    public Inte_log remark(String remark) {
+    public IntegralLogs remark(String remark) {
         this.remark = remark;
         return this;
     }
@@ -130,10 +135,10 @@ public class Inte_log implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Inte_log)) {
+        if (!(o instanceof IntegralLogs)) {
             return false;
         }
-        return id != null && id.equals(((Inte_log) o).id);
+        return id != null && id.equals(((IntegralLogs) o).id);
     }
 
     @Override
@@ -143,13 +148,13 @@ public class Inte_log implements Serializable {
 
     @Override
     public String toString() {
-        return "Inte_log{" +
+        return "IntegralLogs{" +
             "id=" + getId() +
             ", action='" + getAction() + "'" +
-            ", company=" + getCompany() +
+            ", companyUuid='" + getCompanyUuid() + "'" +
             ", createTime='" + getCreateTime() + "'" +
             ", request='" + getRequest() + "'" +
-            ", is_success=" + getIs_success() +
+            ", isSuccess=" + getIsSuccess() +
             ", remark='" + getRemark() + "'" +
             "}";
     }
